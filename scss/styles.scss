@@ -1,0 +1,101 @@
+// GOOGLE FONTS
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Raleway');
+
+// VARIABLES
+$ctr-align: center; 
+$font-main: 'Raleway', sans-serif;
+$font-clr: lightgray;
+$break-sm: 480px;
+$break-md: 768px;
+$break-lg: 1200px;
+
+// MEDIA QUERY MIXIN
+@mixin mq($break) {
+  @if $break == 'sm' {
+    @media (min-width: $break-sm) {
+      @content;
+    }
+  }
+  
+  @else if $break == 'md' {
+    @media (min-width: $break-md) {
+      @content;
+    }
+  }
+  
+  @else if $break == 'lg' {
+    @media (min-width: $break-lg) {
+      @content;
+    }
+  }
+}
+
+// BEGIN STYLES
+body {
+  margin: 0 auto;
+  color: $font-clr;
+  @include mq('md') {
+    max-width: $break-md;
+  }
+  @include mq('lg') {
+    max-width: $break-lg;
+  }
+}
+
+h1 {
+  text-align: $ctr-align;
+  font-family: 'Pacifico', cursive;
+  color: #2ac2e0;
+}
+
+.search-box {
+  text-align: $ctr-align;
+  margin-bottom: 1em;
+}
+
+#search {
+  border: .1em solid $font-clr;
+  padding: .5em;
+  text-align: left;
+  border-radius: .3em;
+  font-family: $font-main;
+  @include mq('sm') {
+    padding: .8em 7em .8em .6em;
+  }
+  @include mq('lg') {
+    padding-right: 20em;
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+  @include mq('sm') {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @include mq('md') {
+    padding: 2em 0;
+  }
+}
+
+.photos {
+  text-align: $ctr-align;
+  margin-bottom: .5em;
+  padding-bottom: .5em;
+  padding: .5em;
+  @include mq('lg') {
+    padding-right: 2em;
+    padding-left: 2em;
+  }
+}
+
+/* LIGHTBOX STYLES */
+.lb-data,
+.lb-caption,
+.lb-number {
+  font-family: $font-main;
+}

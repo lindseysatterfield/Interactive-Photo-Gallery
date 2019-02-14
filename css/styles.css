@@ -84,4 +84,10 @@ h1 {
   font-family: "Raleway", sans-serif;
 }
 
+@media (min-width: 768px) {
+  #lightboxOverlay {
+    max-width: 100%;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

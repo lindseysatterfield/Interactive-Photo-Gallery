@@ -105,3 +105,9 @@ h1 {
     font-family: $font-main;
   }
 }
+
+#lightboxOverlay {
+  @include mq('md') {
+    max-width: 100%;
+  }
+}
